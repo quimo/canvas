@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <main id="app"></main>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+            }
+        </style>
+        <script>
+
+            console.log(`Risoluzione: ${window.innerWidth} x ${window.innerHeight}`);
+
+            // setup
+            const app = document.getElementById('app');
+            const canvas = document.createElement('canvas');
+            canvas.setAttribute('id', 'canvas');
+            canvas.setAttribute('width', 600);
+            canvas.setAttribute('height', 600);
+            app.append(canvas);
+
+             const context = canvas.getContext('2d');
+
+        </script>
+    </body>
+</html>

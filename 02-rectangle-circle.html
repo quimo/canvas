@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <main id="app"></main>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+            }
+            #rectangle {
+                background: rgb(189, 71, 71);
+            }
+        </style>
+        <script>
+
+            console.log(`Risoluzione: ${window.innerWidth} x ${window.innerHeight}`);
+
+            // setup
+            const app = document.getElementById('app');
+            const canvas = document.createElement('canvas');
+            canvas.setAttribute('id', 'canvas');
+            canvas.setAttribute('width', 600);
+            canvas.setAttribute('height', 600);
+            app.append(canvas);
+            const context = canvas.getContext('2d');
+
+            // rettangoli
+            context.fillStyle = 'rgba(189, 71, 71, 1)';
+            context.fillRect(0,0,100,100);
+            context.fillStyle = 'rgba(189, 71, 71, 0.5)';
+            context.fillRect(100,0,100,100);
+
+            // tracciato
+            context.beginPath();
+            context.strokeStyle = 'rgba(189, 71, 71, 1)';
+            const strokeThickness = 4;
+            context.lineWidth = strokeThickness;
+            // il bordo è centrato quindi il rettangolo va riadattato tenendo conto dello spessore del bordo
+            context.rect(200, strokeThickness / 2 ,100 - strokeThickness, 100 - strokeThickness);
+            context.stroke();
+
+            // cerchio
+            context.beginPath();
+            context.strokeStyle = 'rgba(189, 71, 71, 1)';
+            context.lineWidth = 1;
+            context.arc(350 - strokeThickness, 50, 50 - strokeThickness, 0, 2 * Math.PI);    // arco in radianti
+            context.stroke();
+
+        </script>
+    </body>
+</html>
